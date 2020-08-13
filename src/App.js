@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, NavLink } from "react-router-dom";
+import { BrowserRouter, Route, NavLink, Switch } from "react-router-dom";
 import Courses from "./containers/Courses/Courses";
 import Users from "./containers/Users/Users";
-import Course from "./containers/Course/Course"
-import "./App.css"
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -14,17 +13,18 @@ class App extends Component {
             <nav>
               <ul>
                 <li>
-                <NavLink to="/courses" exact>Courses</NavLink>
+                  <NavLink to="/courses">Courses</NavLink>
                 </li>
                 <li>
-                <NavLink to="/users">Users</NavLink>
+                  <NavLink to="/users">Users</NavLink>
                 </li>
               </ul>
             </nav>
           </header>
-          <Route path="/courses" exact component={Courses} />
-          <Route path="/users" exact component={Users} />
-          <Route path="/courses/:id" exact title="some"component={Course} />
+          <Switch>
+            <Route path="/courses" component={Courses} />
+            <Route path="/users" exact component={Users} />
+          </Switch>
           <ol style={{ textAlign: "left" }}>
             <li>
               Add Routes to load "Users" and "Courses" on different pages (by
