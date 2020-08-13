@@ -22,8 +22,10 @@ class App extends Component {
             </nav>
           </header>
           <Switch>
+            <Route path="/" exact />
             <Route path="/courses" component={Courses} />
             <Route path="/users" exact component={Users} />
+            <Route render={() => <h2>Ooops! 404 Error! Unknown URL!</h2>} />
           </Switch>
           <ol style={{ textAlign: "left" }}>
             <li>
