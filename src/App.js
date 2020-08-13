@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, NavLink } from "react-router-dom";
 import Courses from "./containers/Courses/Courses";
 import Users from "./containers/Users/Users";
+import Course from "./containers/Course/Course"
 import "./App.css"
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
           </header>
           <Route path="/courses" exact component={Courses} />
           <Route path="/users" exact component={Users} />
+          <Route path="/courses/:id" exact component={Course} />
           <ol style={{ textAlign: "left" }}>
             <li>
               Add Routes to load "Users" and "Courses" on different pages (by
