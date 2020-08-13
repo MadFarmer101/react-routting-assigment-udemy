@@ -24,7 +24,7 @@ class App extends Component {
           </header>
           <Route path="/courses" exact component={Courses} />
           <Route path="/users" exact component={Users} />
-          <Route path="/courses/:id" exact component={Course} />
+          <Route path="/courses/:id" exact title="some"component={Course} />
           <ol style={{ textAlign: "left" }}>
             <li>
               Add Routes to load "Users" and "Courses" on different pages (by
